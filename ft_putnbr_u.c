@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_u.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ysahraou <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: ysahraou <ysahraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 14:50:10 by ysahraou          #+#    #+#             */
-/*   Updated: 2023/12/13 14:50:59 by ysahraou         ###   ########.fr       */
+/*   Updated: 2023/12/13 15:32:37 by ysahraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_putnbr_u(unsigned int n, int *count)
 	char	c;
 
 	c = '0';
-	if (n >= 0 && n <= 9)
+	if (n <= 9)
 	{
 		c += n;
 		write(1, &c, 1);
