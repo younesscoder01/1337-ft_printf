@@ -6,7 +6,7 @@
 /*   By: ysahraou <ysahraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 15:51:33 by ysahraou          #+#    #+#             */
-/*   Updated: 2023/12/14 11:22:52 by ysahraou         ###   ########.fr       */
+/*   Updated: 2023/12/14 11:32:40 by ysahraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ int	ft_printf(const char *type, ...)
 		if (*type == '%')
 		{
 			type++;
+			if (*type == '\0')
+				return (-1);
 			ft_check_f(*type, args, &count);
 		}
 		else
