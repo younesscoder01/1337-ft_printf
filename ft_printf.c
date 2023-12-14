@@ -6,7 +6,7 @@
 /*   By: ysahraou <ysahraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 15:51:33 by ysahraou          #+#    #+#             */
-/*   Updated: 2023/12/14 11:07:28 by ysahraou         ###   ########.fr       */
+/*   Updated: 2023/12/14 11:22:52 by ysahraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 static void	put_address(unsigned long num, int *count)
 {
-	if(num == 0)
+	if (num == 0)
 	{
 		*count += write(1, "(nil)", 5);
 	}
