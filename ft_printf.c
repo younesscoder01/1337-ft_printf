@@ -6,17 +6,24 @@
 /*   By: ysahraou <ysahraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 15:51:33 by ysahraou          #+#    #+#             */
-/*   Updated: 2023/12/13 14:37:31 by ysahraou         ###   ########.fr       */
+/*   Updated: 2023/12/14 11:07:28 by ysahraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdio.h>
 
-static void	ft_address(int num, int *count)
+static void	put_address(unsigned long num, int *count)
 {
-	*count += write(1, "0x", 2);
-	ft_printhex(num, count, 'x');
+	if(num == 0)
+	{
+		*count += write(1, "(nil)", 5);
+	}
+	else
+	{
+		*count += write(1, "0x", 2);
+		ft_address(num, count);
+	}
 }
 
 static void	ft_check_f(char f, va_list args, int *count)
@@ -25,18 +32,14 @@ static void	ft_check_f(char f, va_list args, int *count)
 		*count += ft_putchar(va_arg(args, int ));
 	else if (f == 's')
 		*count += ft_putstr(va_arg(args, char *));
-	else if (f == 'd')
-		ft_putnbr(va_arg(args, int), count);
-	else if (f == 'i')
+	else if (f == 'd' || f == 'i')
 		ft_putnbr(va_arg(args, int), count);
 	else if (f == 'u')
 		ft_putnbr_u(va_arg(args, unsigned int), count);
-	else if (f == 'x')
-		ft_printhex(va_arg(args, int), count, 'x');
-	else if (f == 'X')
-		ft_printhex(va_arg(args, int), count, 'X');
+	else if (f == 'x' || f == 'X')
+		ft_printhex(va_arg(args, int), count, f);
 	else if (f == 'p')
-		ft_address(va_arg(args, int), count);
+		put_address(va_arg(args, unsigned long int), count);
 	else if (f == '%')
 		*count += ft_putchar('%');
 	else

@@ -6,7 +6,7 @@ RM = rm -f
 NAME = libftprintf.a
 
 src = ./ft_putchar.c ./ft_putnbr_u.c ./ft_printf.c \
-	  ./ft_printhex.c ./ft_putnbr.c ./ft_putstr.c
+	  ./ft_printhex.c ./ft_putnbr.c ./ft_putstr.c ./ft_address.c
 
 obj = $(src:.c=.o)
 
