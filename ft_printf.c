@@ -6,7 +6,7 @@
 /*   By: ysahraou <ysahraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 15:51:33 by ysahraou          #+#    #+#             */
-/*   Updated: 2023/12/14 13:04:30 by ysahraou         ###   ########.fr       */
+/*   Updated: 2023/12/14 13:17:39 by ysahraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ static void	put_address(unsigned long num, int *count)
 	}
 }
 
-static void put_hex(unsigned int n, int *count, char c)
+static void	put_hex(unsigned int n, int *count, char c)
 {
 	if (n == 0)
 		*count += write(1, "0", 1);
