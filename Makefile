@@ -14,7 +14,7 @@ all: $(NAME)
 
 $(NAME): $(obj)
 
-c.o:
+%.o : %.c
 	$(CC) $(CFLAGS) -c -o $@ $^
 	$(AR) $(NAME) $@
 

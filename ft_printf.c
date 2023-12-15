@@ -6,7 +6,7 @@
 /*   By: ysahraou <ysahraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 15:51:33 by ysahraou          #+#    #+#             */
-/*   Updated: 2023/12/14 13:17:39 by ysahraou         ###   ########.fr       */
+/*   Updated: 2023/12/15 16:10:44 by ysahraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,5 +80,6 @@ int	ft_printf(const char *type, ...)
 		}
 		type++;
 	}
+	va_end(args);
 	return (count);
 }
