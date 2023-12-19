@@ -6,7 +6,7 @@
 /*   By: ysahraou <ysahraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 15:51:33 by ysahraou          #+#    #+#             */
-/*   Updated: 2023/12/15 16:10:44 by ysahraou         ###   ########.fr       */
+/*   Updated: 2023/12/19 10:39:31 by ysahraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	ft_check_f(char f, va_list args, int *count)
 	else if (f == 'x' || f == 'X')
 		put_hex(va_arg(args, int), count, f);
 	else if (f == 'p')
-		put_address(va_arg(args, unsigned long int), count);
+		put_address(va_arg(args, unsigned long), count);
 	else if (f == '%')
 		*count += ft_putchar('%');
 	else
