@@ -6,12 +6,11 @@
 /*   By: ysahraou <ysahraou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 15:51:33 by ysahraou          #+#    #+#             */
-/*   Updated: 2023/12/19 10:39:31 by ysahraou         ###   ########.fr       */
+/*   Updated: 2023/12/21 15:09:02 by ysahraou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdio.h>
 
 static void	put_address(unsigned long num, int *count)
 {
@@ -62,6 +61,8 @@ int	ft_printf(const char *type, ...)
 	va_list	args;
 	int		count;
 
+	if (!type)
+		return (-1);
 	va_start(args, type);
 	count = 0;
 	while (*type)
